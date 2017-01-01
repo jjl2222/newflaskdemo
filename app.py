@@ -29,9 +29,30 @@ r.json()
 {u'private_gists': 419, u'total_private_repos': 77, ...}
 
 
-#use pandas to create dataframe
+#use pandas to create dataframe #example
 
 df = DataFrame(data=d, index=index)
+
+of_interest = ['Obama, Barack', 'Romney, Mitt', 'Santorum, Rick', 
+               'Paul, Ron', 'Gingrich, Newt']
+parties = {
+  'Bachmann, Michelle': 'Republican',
+  'Romney, Mitt': 'Republican',
+  'Obama, Barack': 'Democrat',
+  "Roemer, Charles E. 'Buddy' III": 'Reform',
+  'Pawlenty, Timothy': 'Republican',
+  'Johnson, Gary Earl': 'Libertarian',
+  'Paul, Ron': 'Republican',
+  'Santorum, Rick': 'Republican',
+  'Cain, Herman': 'Republican',
+  'Gingrich, Newt': 'Republican',
+  'McCotter, Thaddeus G': 'Republican',
+  'Huntsman, Jon': 'Republican',
+  'Perry, Rick': 'Republican'           
+ }
+
+fec = read_csv('P00000001-ALL.txt')
+fec.groupby('party')['contb_receipt_amt'].sum()
 
 
 #plot on bokeh (example)
