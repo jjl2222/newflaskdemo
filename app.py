@@ -31,10 +31,7 @@ r.json()
 
 #use pandas to create dataframe
 
-
-
-
-
+df = DataFrame(data=d, index=index)
 
 
 #plot on bokeh (example)
